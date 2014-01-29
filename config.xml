@@ -6,7 +6,6 @@
         id        = "es.mobide.hello-world"
         version   = "1.0.0">
 		
-<gap:platform name="ios" />
 <gap:platform name="android" />
 
     <name>Hello World</name>
