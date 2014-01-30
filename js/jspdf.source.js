@@ -948,78 +948,36 @@ PubSub implementation
             @name output
             */
             output = function (type, options) {
-                var undef, data, length, array, i, blob;
-                switch (type) {
-                case undef:
-                    return buildDocument();
-                case 'save':
-                    if (navigator.getUserMedia) {
-                        if (window.URL === undefined) {
-                            return API.output('dataurlnewwindow');
-                        } else if (window.URL.createObjectURL === undefined) {
-                            return API.output('dataurlnewwindow');
-                        }
+            var undef, data, length, array, i, blob;
+            switch (type) {
+            case undef:
+                return buildDocument();
+            case 'save':
+                if (navigator.getUserMedia) {
+                    if (window.URL === undefined) {
+                        return API.output('dataurlnewwindow');
+                    } else if (window.URL.createObjectURL === undefined) {
+                        return API.output('dataurlnewwindow');
                     }
-                    data = buildDocument();
-
-                    // Need to add the file to BlobBuilder as a Uint8Array
-                    length = data.length;
-                    array = new Uint8Array(new ArrayBuffer(length));
-
-                    for (i = 0; i < length; i++) {
-                        array[i] = data.charCodeAt(i);
-                    }
-
-                   //                    blob = new Blob([array], {type: "application/pdf"});
-
-				try
-				{
-					blob = new Blob([array], {type: "application/pdf"});
-					console.debug("case 1");
-				 }
-				 catch (e)
-				 {
-					 window.BlobBuilder = window.BlobBuilder ||
-														  window.WebKitBlobBuilder ||
-														  window.MozBlobBuilder ||
-														  window.MSBlobBuilder;
-					 if (e.name == 'TypeError' && window.BlobBuilder)
-					 {
-						 var bb = new BlobBuilder();
-						 bb.append(data);
-						 blob = bb.getBlob("application/pdf");
-						 console.debug("case 2");
-					  }
-					  else if (e.name == "InvalidStateError")
-					  {
-						  // InvalidStateError (tested on FF13 WinXP)
-						  blob = new Blob([array], {type: "application/pdf"});
-						  console.debug("case 3");
-					   }
-					   else
-					   {
-						   // We're screwed, blob constructor unsupported entirely
-						   console.debug("Errore");
-					   }
-				 }
-
-                    saveAs(blob, options);
-                    break;
-                case 'datauristring':
-                case 'dataurlstring':
-                    return 'data:application/pdf;base64,' + btoa(buildDocument());
-                case 'datauri':
-                case 'dataurl':
-                    document.location.href = 'data:application/pdf;base64,' + btoa(buildDocument());
-                    break;
-                case 'dataurlnewwindow':
-                    window.open('data:application/pdf;base64,' + btoa(buildDocument()));
-                    break;
-                default:
-                    throw new Error('Output type "' + type + '" is not supported.');
                 }
-                // @TODO: Add different output options
-            };
+                data = buildDocument();
+                write(data, options);                    
+                break;
+            case 'datauristring':
+            case 'dataurlstring':
+                return 'data:application/pdf;base64,' + btoa(buildDocument());
+            case 'datauri':
+            case 'dataurl':
+                document.location.href = 'data:application/pdf;base64,' + btoa(buildDocument());
+                break;
+            case 'dataurlnewwindow':
+                window.open('data:application/pdf;base64,' + btoa(buildDocument()));
+                break;
+            default:
+                throw new Error('Output type "' + type + '" is not supported.');
+            }
+            // @TODO: Add different output options
+        };
 
         if (unit === 'pt') {
             k = 1;
