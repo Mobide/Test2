@@ -79,7 +79,13 @@
 				$("#select-lang").parent().find('span span:first').attr('class','ui-btn-text '+icon_css);
 				$("#select-lang").parent().find('span span:first').html('');		
       
-	 alert('generating pdf...');
+	  });
+	  
+	  
+	  function pdfg()
+      {   
+	  
+	  alert('generating pdf...');
 	 console.log("generating pdf...");
 var doc = new jsPDF();
  
@@ -124,7 +130,10 @@ function(event){
  console.log( evt.target.error.code );
 });
 	  alert(' fin  pdf...');
-	  });
+	  
+	 } 
+	  
+	  
       
       function changeLanguage()
       { 
@@ -168,7 +177,7 @@ function(event){
 								<li data-role="list-divider" class="gradiente" style="">
                   <h1 style="" class="title">Restaurante - Jatetxea</h1>  
                 </li>
-								<li style="" onclick="alert('el restaurante');" ><a  data-transition="slide" href="#" style="white-space:normal;">El restaurante</a></li>
+								<li style="" onclick="pdfg();" ><a  data-transition="slide" href="#" style="white-space:normal;">El restaurante</a></li>
 								<li style=""><a  data-transition="slide" href="#" style="white-space:normal;">Nuestros menús</a></li>
 								<li style=""><a  data-transition="slide" href="#" style="white-space:normal;">A la carta</a></li>
 								<li style=""><a  data-ajax="false" href="pintxos.html" style="white-space:normal;">Nuestros pintxos</a></li>
