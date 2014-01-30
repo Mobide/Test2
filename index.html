@@ -83,33 +83,39 @@
 	  
 	  
 	  
-	 function gotFS(fileSystem) {
+	 write = function (data, filename) {
 	 alert('2');
-
-    fileSystem.root.getFile("test.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+    var PERSISTENT = window.PERSISTENT || LocalFileSystem.PERSISTENT;
+alert('3');
+	window.requestFileSystem(PERSISTENT, 0, gotFS, fail);
+alert('3');
+	function gotFS(fileSystem) {
+	alert('4');
+		fileSystem.root.getFile(filename, {create: true, exclusive: false}, gotFileEntry, fail);
 	}
 
 	function gotFileEntry(fileEntry) {
-	alert('3');
-    fileEntry.createWriter(gotFileWriter, fail);
+		fileEntry.createWriter(gotFileWriter, fail);
 	}
 
 	function gotFileWriter(writer) {
-	alert('1');
-    var doc = new jsPDF();
-    doc.setFontSize(14);
+		writer.write(data);
+	}
 
-    doc.text(20, 20, 'Hello world!');
-    writer.write(doc.output());
-}
+	function fail(error) {
+		console.log(error.code);
+	 }
+	}
 	  
 	  
 	  function pdfg()
       {   
 	  alert('1');
-	 var PERSISTENT = window.PERSISTENT || LocalFileSystem.PERSISTENT;
-	window.requestFileSystem(PERSISTENT, 0, gotFS, fail);
-	  alert('fin');
+	 var doc = new jsPDF();
+    doc.setFontSize(14);
+    doc.text(20, 20, 'Hello world!');
+    doc.output();
+	alert('fin');
 	 } 
 	  
 	  
