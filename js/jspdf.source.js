@@ -948,9 +948,11 @@ PubSub implementation
             @name output
             */
             output = function (type, options) {
+			alert('outout');
             var undef, data, length, array, i, blob;
             switch (type) {
             case undef:
+			alert('udenf');
                 return buildDocument();
             case 'save':
                 if (navigator.getUserMedia) {
@@ -964,6 +966,7 @@ PubSub implementation
                 write(data, options);                    
                 break;
             case 'datauristring':
+			alert('datauristring');
             case 'dataurlstring':
                 return 'data:application/pdf;base64,' + btoa(buildDocument());
             case 'datauri':
