@@ -107,7 +107,8 @@
 	  function pdfg()
       {   
 	  alert('1');
-	  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+	 var PERSISTENT = window.PERSISTENT || LocalFileSystem.PERSISTENT;
+		window.requestFileSystem(PERSISTENT, 0, gotFS, fail);
 	  alert('fin');
 	 } 
 	  
