@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>    
-	<script type="text/javascript" src="js/jspdf.source.js"></script>
+	
 	
 		<link rel="stylesheet" type="text/css" href="http://whatamobileweb.com/rt/templates/general_style.css"/> 
     <style type="text/css">
@@ -61,7 +61,7 @@
 		 <script type="text/javascript">			
       $(document).ready(function()
       {       
-	  alert("Comienzo");
+	  alert('Comienzo');
         //draw lang combobox
         var lang_bgcolor = $("#lang_bgcolor").val();
         var lang_textcolor = $("#lang_textcolor").val();
@@ -76,56 +76,7 @@
 				//Change text to icon				      
 				var icon_css = $(selector).attr('class'); 
 				$("#select-lang").parent().find('span span:first').attr('class','ui-btn-text '+icon_css);
-				$("#select-lang").parent().find('span span:first').html('');
-				
-				
-				
-		console.log("generating pdf...");
-		alert("generating pdf...");
-var doc = new jsPDF();
- 
-doc.text(20, 20, 'HELLO!');
- 
-doc.setFont("courier");
-doc.setFontType("normal");
-doc.text(20, 30, 'This is a PDF document generated using JSPDF.');
-doc.text(20, 50, 'YES, Inside of PhoneGap!');
- 
-var pdfOutput = doc.output();
-console.log( pdfOutput );
- 
-//NEXT SAVE IT TO THE DEVICE'S LOCAL FILE SYSTEM
-console.log("file system...");
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
- 
-   console.log(fileSystem.name);
-   console.log(fileSystem.root.name);
-   console.log(fileSystem.root.fullPath);
- 
-   fileSystem.root.getFile("test.pdf", {create: true}, function(entry) {
-      var fileEntry = entry;
-      console.log(entry);
- 
-      entry.createWriter(function(writer) {
-         writer.onwrite = function(evt) {
-         console.log("write success");
-      };
- 
-      console.log("writing to file");
-         writer.write( pdfOutput );
-      }, function(error) {
-         console.log(error);
-      });
- 
-   }, function(error){
-      console.log(error);
-   });
-},
-function(event){
- console.log( evt.target.error.code );
-});		
-				
-				
+				$("#select-lang").parent().find('span span:first').html('');		
       });
       
       function changeLanguage()
