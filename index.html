@@ -13,7 +13,7 @@
     <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>  
 	<script type="text/javascript" src="js/jspdf.source.js"></script>	
-	
+	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
 	
 		<link rel="stylesheet" type="text/css" href="http://whatamobileweb.com/rt/templates/general_style.css"/> 
     <style type="text/css">
@@ -82,57 +82,29 @@
 	  });
 	  
 	  
+	  
+	 function gotFS(fileSystem) {
+	 
+
+    fileSystem.root.getFile("test.pdf", {create: true, exclusive: false}, gotFileEntry, fail);
+	}
+
+	function gotFileEntry(fileEntry) {
+    fileEntry.createWriter(gotFileWriter, fail);
+	}
+
+	function gotFileWriter(writer) {
+    var doc = new jsPDF();
+    doc.setFontSize(14);
+
+    doc.text(20, 20, 'Hello world!');
+    writer.write(doc.output());
+}
+	  
+	  
 	  function pdfg()
       {   
-	  
-	  alert('generating pdf...');
-	  
-	 console.log("generating pdf...");
-var doc = new jsPDF();
- alert('1');
-doc.text(20, 20, 'HELLO!');
- 
-doc.setFont("courier");
-doc.setFontType("normal");
-doc.text(20, 30, 'This is a PDF document generated using JSPDF.');
-doc.text(20, 50, 'YES, Inside of PhoneGap!');
- alert('2');
-var pdfOutput = doc.output();
-console.log( pdfOutput );
- alert('3');
-//NEXT SAVE IT TO THE DEVICE'S LOCAL FILE SYSTEM
-console.log("file system...");
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 2*1024*1024, function(fileSystem) {
- alert('4');
-   console.log(fileSystem.name);
-   console.log(fileSystem.root.name);
-   console.log(fileSystem.root.fullPath);
- alert('5');
-   fileSystem.root.getFile("test.pdf", {create: true}, function(entry) {
-      var fileEntry = entry;
-      console.log(entry);
- alert('6');
-      entry.createWriter(function(writer) {
-         writer.onwrite = function(evt) {
-         console.log("write success");
-      };
- alert('7');
-      console.log("writing to file");
-         writer.write( pdfOutput );
-      }, function(error) {
-         console.log(error);
-      });
- alert('8');
-   }, function(error){
-      console.log(error);
-   });
-},
-function(event){
-alert('9');
- console.log( evt.target.error.code );
-});
-	  alert(' fin  pdf...');
-	  
+	  window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 	 } 
 	  
 	  
