@@ -61,6 +61,7 @@
 		 <script type="text/javascript">			
       $(document).ready(function()
       {       
+	  alert("Comienzo");
         //draw lang combobox
         var lang_bgcolor = $("#lang_bgcolor").val();
         var lang_textcolor = $("#lang_textcolor").val();
@@ -80,6 +81,7 @@
 				
 				
 		console.log("generating pdf...");
+		alert("generating pdf...");
 var doc = new jsPDF();
  
 doc.text(20, 20, 'HELLO!');
