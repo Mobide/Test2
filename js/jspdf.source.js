@@ -970,7 +970,38 @@ PubSub implementation
                         array[i] = data.charCodeAt(i);
                     }
 
-                    blob = new Blob([array], {type: "application/pdf"});
+                   //                    blob = new Blob([array], {type: "application/pdf"});
+
+				try
+				{
+					blob = new Blob([array], {type: "application/pdf"});
+					console.debug("case 1");
+				 }
+				 catch (e)
+				 {
+					 window.BlobBuilder = window.BlobBuilder ||
+														  window.WebKitBlobBuilder ||
+														  window.MozBlobBuilder ||
+														  window.MSBlobBuilder;
+					 if (e.name == 'TypeError' && window.BlobBuilder)
+					 {
+						 var bb = new BlobBuilder();
+						 bb.append(data);
+						 blob = bb.getBlob("application/pdf");
+						 console.debug("case 2");
+					  }
+					  else if (e.name == "InvalidStateError")
+					  {
+						  // InvalidStateError (tested on FF13 WinXP)
+						  blob = new Blob([array], {type: "application/pdf"});
+						  console.debug("case 3");
+					   }
+					   else
+					   {
+						   // We're screwed, blob constructor unsupported entirely
+						   console.debug("Errore");
+					   }
+				 }
 
                     saveAs(blob, options);
                     break;
