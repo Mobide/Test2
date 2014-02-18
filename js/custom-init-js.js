@@ -38,7 +38,7 @@
 
 	$.ajax({
 		data: parametros,
-		url: 'ObtenerListadoPintxos.php',
+		url: 'http://demo.mobide.es/testbartolo/ObtenerListadoPintxos.php',
 		type: 'get',
 		beforeSend: function () {
 			//$("#resultado").html("Procesando, espere por favor..."); para introducir en el futuro el gif de cargando
