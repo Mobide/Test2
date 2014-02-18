@@ -29,6 +29,7 @@
 	}
 	
 	function realizaProceso1(valorCaja1, valorCaja2){
+	alert("Comienzo llamada funcion");
 	var parametros = {
 	"valor1" : 1,
 	"valor2" : "img/pintxo.png",
