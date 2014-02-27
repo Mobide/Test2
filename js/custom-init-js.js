@@ -80,6 +80,7 @@ function obtenerDetalle(id){
 				return;
 			}
 			//$(":mobile-pagecontainer" ).pagecontainer( "change", "#detallepintxo");
+			alert(pintxo.alias);
 			$("#image_principal_pintxo").html("<img width='100%' src='img/detalle/" + pintxo.srcimg +"'>");
 			$("#title_pintxo").html(pintxo.alias);
 			$("#info_pintxo").html(pintxo.ingredientes);
