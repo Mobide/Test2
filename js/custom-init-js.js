@@ -44,7 +44,7 @@ function obtenerListado(tipo){
 			{
 				pintxo = pintxos[idx];
 				$Listado.append(
-				"<li><a href='#' onclick='obtenerDetalle(" + pintxo.id + ")'>"+
+				"<li><a href='#detallepintxo' onclick='obtenerDetalle(" + pintxo.id + ")'>"+
 				"<img src='img/listado/" + pintxo.srcimg + "'>" +
 				"<h2>" + pintxo.alias + "</h2>" +
 				"<p>" + pintxo.ingredientes + "</p>" +
@@ -79,7 +79,7 @@ function obtenerDetalle(id){
 				// no se encontraron registros :(
 				return;
 			}
-			$(":mobile-pagecontainer" ).pagecontainer( "change", "#detallepintxo");
+			//$(":mobile-pagecontainer" ).pagecontainer( "change", "#detallepintxo");
 			$("#image_principal_pintxo").html("<img width='100%' src='img/detalle/" + pintxo.srcimg +"'>");
 			$("#title_pintxo").html(pintxo.alias);
 			$("#info_pintxo").html(pintxo.ingredientes);
