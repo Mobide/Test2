@@ -1,39 +1,21 @@
 	
-	$(document).on("mobileinit", function() {
-		$.mobile.defaultPageTransition = "slide";
-	});
+$(document).on("mobileinit", function() {
+$.mobile.defaultPageTransition = "slide";
+});
 	
-	$(document).ready(function(event){
-	alert('ready');
-	realizaProceso1(1, 2);
-	});
+$(document).ready(function(event){
+obtenerListado("Pintxo");
+});
 	
-	$(document).bind('pageload', function(){
-	alert("page load");
-	realizaProceso2(1, 2);	 
-	});
+/*$(document).bind('pageload', function(){ 
+obtenerDetalle(1);
+});
+*/
 	
-	function showLogoIfHome()
-	{			
-		$(".index-page").on("pagehide", function() { 
-			$(".index-k5-logo-container").hide();
-		});
-		$(".index-page").on("pageshow", function() { 
-			setTimeout(function(){
-				//$("#index-k5-logo").show();
-				//$("#index-k5-logo-container").slideUp( "4000", function() {}).show();
-				//$("#index-k5-logo-container").show("slide", { direction: "top" }, 5000);
-				$(".index-k5-logo-container").fadeIn(2000);
-			},2000);
-		});
-	}
 	
-	function realizaProceso1(valorCaja1, valorCaja2){
-	alert("Comienzo llamada funcion");
+function obtenerListado(tipo){
 	var parametros = {
-	"valor1" : 1,
-	"valor2" : "img/pintxo.png",
-	"valor3" : "titulo del pintxo"
+	"tipo" : tipo
 	};
 
 	$.ajax({
@@ -48,12 +30,10 @@
 				var pintxos  = $.parseJSON(ajaxResponse);
 			}
 			if (!pintxos)
-				{
+			{
 				// no se encontraron registros :(
 				return;
-				}
- 
-			// recupera la instancia de la tabla en donde colocaremos los 
+			} 
 			// Recuperamos el elemento donde se van a postear el listado de los pintxos
 			var $Listado = $("#listadoPintxos");
 			
@@ -64,14 +44,14 @@
 			{
 				pintxo = pintxos[idx];
 				$Listado.append(
-					"<li><a href='detallepintxo.html?&id=" + pintxo.id + "'>"+
-					"<img src='" + pintxo.srcImagen + "'>" +
-					"<h2>" + pintxo.title + "</h2>" +
-					"<p>Phoenix</p>" +
-					"</a></li>").listview("refresh"); 
+				"<li><a href='#' onclick='obtenerDetalle(" + pintxo.id + ")'>"+
+				"<img src='img/listado/" + pintxo.srcimg + "'>" +
+				"<h2>" + pintxo.alias + "</h2>" +
+				"<p>" + pintxo.ingredientes + "</p>" +
+				"</a></li>").listview("refresh"); 
 			} 
-						//$("#resultado").html(response);
-			}
+					
+		}
 	});
 }
 
@@ -79,14 +59,10 @@
 
 
 
-function realizaProceso2(valorCaja1, valorCaja2){
+function obtenerDetalle(id){
 	var parametros = {
-	"valor1" : 1,
-	"valor2" : "img/pintxo.png",
-	"valor3" : "titulo del pintxo",
-	"valor4" : "Descripcion del pintxo"
+	"id" : id
 	};
-
 	$.ajax({
 		data: parametros,
 		url: 'ObtenerDetallePintxo.php',
@@ -99,28 +75,20 @@ function realizaProceso2(valorCaja1, valorCaja2){
 				var pintxo  = $.parseJSON(ajaxResponse);
 			}
 			if (!pintxo)
-				{
+			{
 				// no se encontraron registros :(
 				return;
-				}
- 
-			// recupera la instancia de la tabla en donde colocaremos los 
-			// Recuperamos el elemento donde se van a postear el listado de los pintxos
-			var $Listado = $("#listadoPintxos");
-			
-		 
-		 	var $Imagen= $("#image_principal_pintxo");
-			var $Titulo= $("#title_pintxo");
-			var $Descripcion=$("#info_pintxo");
-			
-			$Imagen.html("<img width='100%' src='" + pintxo.srcImagen +"'>");
-			$Titulo.html(pintxo.title);
-			$Descripcion.html(pintxo.descripcion);
-		 
-		 
-			// ahora, para cada pintxo
-			
-			//$Listado.html(pintxo.descripcion).listview("refresh"); 
 			}
+			$(":mobile-pagecontainer" ).pagecontainer( "change", "#detallepintxo");
+			$("#image_principal_pintxo").html("<img width='100%' src='img/detalle/" + pintxo.srcimg +"'>");
+			$("#title_pintxo").html(pintxo.alias);
+			$("#info_pintxo").html(pintxo.ingredientes);
+				
+			
+			
+			
+			
+			
+		}
 	});
 }

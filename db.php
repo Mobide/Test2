@@ -1,8 +1,8 @@
 <?php
 $DB_HOST = "localhost";
-$DB_NAME = "wamw";
-$DB_USER = "wamw";
-$DB_PWD  = "86ED37";
+$DB_NAME = "bartolo";
+$DB_USER = "bartoloadmin";
+$DB_PWD  = "bartoloetxea2014";
 
 //-----------------------------------------------------------------------------------------------------------------------
 // CONNECTION METHODS
@@ -11,6 +11,7 @@ function db_connect()
 {
   global $DB_HOST, $DB_USER, $DB_PWD, $DB_NAME;
   $conn = mysql_connect ($DB_HOST, $DB_USER, $DB_PWD) or die ("Internal server error");
+ 
   mysql_select_db ($DB_NAME)                          or die ("Internal server error");
   mysql_query ("SET NAMES 'utf8'");
   return $conn;
@@ -19,6 +20,34 @@ function db_close ($_conn)
 {
   mysql_close ($_conn) or die ("Internal sever error");
 }
+
+//-----------------------------------------------------------------------------------------------------------------------
+// ITEMS METHODS
+//-----------------------------------------------------------------------------------------------------------------------
+function db_get_items($_conn,$tipo)
+{
+ //$web_id = mysql_real_escape_string($_web_id);
+ $query = "select * from pintxos where tipo=\"$tipo\""; //
+ $result = mysql_query($query, $_conn);
+ if(!$result)
+    return null;   
+ return $result;
+}
+
+
+function db_get_item_row($_conn, $_item_id)
+{    
+	$item_id = mysql_real_escape_string($_item_id);
+	$query = "select * from pintxos where id = $item_id";  
+	$result = mysql_query($query, $_conn);
+	if(!$result)
+		return null;   
+	$row = mysql_fetch_array($result); 
+	return $row;
+}
+
+
+
 
 //-----------------------------------------------------------------------------------------------------------------------
 //SUPPLIER METHODS

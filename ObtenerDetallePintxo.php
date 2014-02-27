@@ -1,11 +1,10 @@
 <?php
-$obj= array();
+require_once("db.php");
 
-$obj['id']= $_GET['valor1']; //string
-$obj['srcImagen'] = $_GET['valor2'];  // integer.
-$obj['title']= $_GET['valor3']; //array
-$obj['descripcion']= $_GET['valor4']; //array
+$conn = db_connect ();
+$id=$_GET['id'];
+$item_row=db_get_item_row($conn,$id);
 
 
-echo json_encode($obj);
+echo json_encode($item_row);
 ?>
