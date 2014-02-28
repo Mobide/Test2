@@ -71,11 +71,14 @@ function obtenerDetalle(id){
 			//$("#resultado").html("Procesando, espere por favor..."); para introducir en el futuro el gif de cargando
 		},
 		success: function ProcesarRespuesta(ajaxResponse) {
+		alert("Ajax detalle pintxo correo")
+		alert(ajaxResponse);
 			if (typeof ajaxResponse == "string"){
 				var pintxo  = $.parseJSON(ajaxResponse);
 			}
 			if (!pintxo)
 			{
+			alert("no se ha encontrado el pintxo");
 				// no se encontraron registros :(
 				return;
 			}
