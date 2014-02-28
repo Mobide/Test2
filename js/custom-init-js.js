@@ -60,6 +60,7 @@ function obtenerListado(tipo){
 
 
 
+
 function obtenerDetalle(id){
 alert("llamada obtener detalle1");
 	var parametros = {
