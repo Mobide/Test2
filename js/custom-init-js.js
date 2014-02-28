@@ -26,6 +26,7 @@ function obtenerListado(tipo){
 			//$("#resultado").html("Procesando, espere por favor..."); para introducir en el futuro el gif de cargando
 		},
 		success: function ProcesarRespuesta(ajaxResponse) {
+		alert(ajaxResponse);
 			if (typeof ajaxResponse == "string"){
 				var pintxos  = $.parseJSON(ajaxResponse);
 			}
@@ -44,7 +45,7 @@ function obtenerListado(tipo){
 			{
 				pintxo = pintxos[idx];
 				$Listado.append(
-				"<li><a href='#detallepintxo' onclick='obtenerDetalle(" + pintxo.id + ")'>"+
+				"<li><a href='#detallepintxo' onclick='alert('boton');obtenerDetalle(" + pintxo.id + ")'>"+
 				"<img src='img/listado/" + pintxo.srcimg + "'>" +
 				"<h2>" + pintxo.alias + "</h2>" +
 				"<p>" + pintxo.ingredientes + "</p>" +
@@ -87,13 +88,7 @@ alert("llamada obtener detalle1");
 			alert(pintxo.alias);
 			$("#image_principal_pintxo").html("<img width='100%' src='img/detalle/" + pintxo.srcimg +"'>");
 			$("#title_pintxo").html(pintxo.alias);
-			$("#info_pintxo").html(pintxo.ingredientes);
-				
-			
-			
-			
-			
-			
+			$("#info_pintxo").html(pintxo.ingredientes);		
 		}
 	});
 }
