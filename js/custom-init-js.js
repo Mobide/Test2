@@ -45,7 +45,7 @@ function obtenerListado(tipo){
 			{
 				pintxo = pintxos[idx];
 				$Listado.append(
-				"<li><a href='#detallepintxo' onclick='alert('boton');obtenerDetalle(" + pintxo.id + ")'>"+
+				"<li><a href='#detallepintxo' onclick='alert(2);obtenerDetalle(" + pintxo.id + ")'>"+
 				"<img src='img/listado/" + pintxo.srcimg + "'>" +
 				"<h2>" + pintxo.alias + "</h2>" +
 				"<p>" + pintxo.ingredientes + "</p>" +
