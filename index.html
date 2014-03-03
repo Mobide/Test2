@@ -13,7 +13,7 @@
 <title>Ejemplo sencillo de AJAX</title>
   </head>
   <body>
-  <div data-role="page" class="index-page">
+  <div data-role="page" id="listado-page" class="listado-page">
 	<div data-role="panel" id="menu-panel" data-position="left" data-display="overlay" data-theme="b" data-swipe-close="false">
 		<ul data-role="listview">
 			<li data-icon="back"><a class="menu-item" href="#" data-rel="close">Menu Casa Bartolo</a></li>
@@ -36,9 +36,9 @@
 	</div>
 	
 	<div data-role="header" class="k5-header">
-		<a href="#menu-panel" class="ui-btn-left" style="background-color:#323232 !important;"><img class="k5-header-menu" src="../img/menu.png" alt="menu"/></a>
+		<a href="#menu-panel" class="ui-btn-left" style="background-color:#323232 !important;"><img class="k5-header-menu" src="img/menu.png" alt="menu"/></a>
 		<center><h1 class="k5-header-title">Casa Bartolo Etxea</h1></center>
-		<a href="#lang-panel" class="ui-btn-right" style="background-color:#323232 !important;"><img class="k5-header-lang" src="../img/lang.png" alt="language"/></a>
+		<a href="#lang-panel" class="ui-btn-right" style="background-color:#323232 !important;"><img class="k5-header-lang" src="img/lang.png" alt="language"/></a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
@@ -49,7 +49,7 @@
 	</ul>
 </div><!-- /page -->
   
-    <div data-role="page" id="detallepintxo" class="detalle-page">
+    <div data-role="page" data-id="" id="detallepintxo" class="detalle-page">
 	<div data-role="panel" id="menu-panel" data-position="left" data-display="overlay" data-theme="b" data-swipe-close="false">
 		<ul data-role="listview">
 			<li data-icon="back"><a class="menu-item" href="#" data-rel="close">Menu Casa Bartolo</a></li>
@@ -72,14 +72,15 @@
 	</div>
 	
 	<div data-role="header" class="k5-header">
-		<a href="#menu-panel" class="ui-btn-left" style="background-color:#323232 !important;"><img class="k5-header-menu" src="../img/menu.png" alt="menu"/></a>
+		<a href="#menu-panel" class="ui-btn-left" style="background-color:#323232 !important;"><img class="k5-header-menu" src="img/menu.png" alt="menu"/></a>
 		<center><h1 class="k5-header-title">Casa Bartolo Etxea</h1></center>
-		<a href="#lang-panel" class="ui-btn-right" style="background-color:#323232 !important;"><img class="k5-header-lang" src="../img/lang.png" alt="language"/></a>
+		<a href="#lang-panel" class="ui-btn-right" style="background-color:#323232 !important;"><img class="k5-header-lang" src="img/lang.png" alt="language"/></a>
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
 		
 	</div><!-- /content -->
+	
 	<div id="image_principal_pintxo"></div>
 	<div id="title_pintxo"></div>
 	<div id="info_pintxo"></div>
