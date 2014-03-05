@@ -1,0 +1,321 @@
+/************************* F O N T S********************************/
+
+@font-face {
+	font-family: 'Gill Sans MT Condensed'; 
+	src: url('../font/gill_sans_mt_condensed.eot'); 
+	src: url('../font/gill_sans_mt_condensed.eot?#iefix') format('embedded-opentype'), 
+			 url('../font/gill_sans_mt_condensed.svg#Gill Sans MT Condensed') format('svg'), 
+			 url('../font/gill_sans_mt_condensed.woff') format('woff'), 
+			 url('../font/gill_sans_mt_condensed.ttf') format('truetype');
+  font-weight: normal; 
+	font-style: normal;
+}
+/*******************************************************************/
+/*********************** H E A D E R *******************************/
+
+.bartolo-header{
+	background-image: url("images/madera.jpg")!important;
+	height:60px;
+	margin-top:-1px;
+	border-color: #000000 !important;
+
+}
+
+.bartolo-header-title{
+	text-transform:uppercase;
+	font-family: 'Gill Sans MT Condensed';
+	font-size:22px;
+	margin-top:6px;
+	color: #ffffff;
+	text-shadow:3px 3px 4px #111;
+	margin-bottom: 0px;
+}
+.bartolo-header-subtitle{
+	text-transform:uppercase;
+	font-family: 'Gill Sans MT Condensed';
+	font-size:20px;
+	margin-top:12px;
+	color: #ffffff;
+	text-shadow:3px 3px 4px #111;
+	margin-top: 0px;
+}
+
+
+.bartolo-header-img{
+	margin-top:14px;
+}
+
+.bartolo-header-menu{
+	margin-top:3px !important;
+}
+
+.bartolo-header-lang{
+	margin-top:9px !important;
+}
+
+.bartolo-header .ui-btn-left{
+	padding: 0;
+	background: none;
+	border: 0;
+}
+.ui-header .ui-btn-right{
+	padding-top: 0px!important;
+	padding-bottom: 6px!important;
+	padding-left: 6px!important;
+	padding-right: 6px!important;
+	margin-top: 3px!important;
+	background: none;
+	border: none;
+}
+
+
+/*******************************************************************/
+/***************************** P A N E L S *************************/
+#menu-panel1,#menu-panel1{
+	width:14.5em;
+	/*height:517px;*/
+	min-height:initial;
+	background-image: url("images/madera2.jpg")!important;
+}
+
+#lang-panel1,#lang-panel2{
+	width:11em;/*
+	height:231px;
+	min-height:231px;*/
+	min-height:initial;
+	background-image: url("images/madera2.jpg")!important;
+}
+#lang-panel1 a,#lang-panel2 a{
+	text-align:right;
+	padding-right:1em;
+}
+
+.ui-icon-menu-right {
+		background-image: url("../img/flecha_der.png") !important;
+		background-position: 90% center !important;
+		background-repeat: no-repeat !important;
+		box-shadow: none !important;
+		background-color: transparent !important;
+}
+.ui-icon-menu-right:after {
+	width: 0px !important;
+	height: 0px !important;
+}
+.ui-icon-lang-left {
+    background-image: url("../img/flecha_izq.png") !important;
+		background-position: 13% center !important;
+		background-repeat: no-repeat !important;
+		box-shadow: none !important;
+		background-color: transparent !important;
+}
+.ui-icon-lang-left:after {
+	width: 0px !important;
+	height: 0px !important;
+}
+.menu-item.ui-btn.ui-btn-icon-right.ui-icon-back:after{
+	right: 1.02em;
+}
+.lang-item.ui-btn.ui-btn-icon-right.ui-icon-forward:after{
+	right: 7.45em !important;
+}
+.panel .ui-listview>li.ui-first-child>a.ui-btn {
+font-size:18px;
+background-image: url("images/madera2.jpg")!important;
+}
+.menu-item{
+	text-transform:uppercase;
+	font-family: 'Gill Sans MT Condensed';
+	font-size:15px;
+	text-shadow:2px 2px 4px #111;
+}
+.lang-item{
+	text-transform:uppercase;
+	font-family: 'Gill Sans MT Condensed';
+	font-size:15px;
+	text-shadow:2px 2px 4px #111;
+}
+/*******************************************************************/
+
+/************************ F O O T E R*******************************/
+.k5-footer{
+	border: 0 !important;
+}
+.k5-footer-item{
+	font-family: 'Gill Sans MT';
+	font-size:11px;
+	color:#fed300 !important;
+	text-shadow: none !important;
+	text-decoration: none;
+}
+/******** footer 1 ************/
+.k5-footer-icon{
+	width:22px;
+	height:21px;
+	margin-left:3px;
+	margin-top:8px;
+}
+/******* footer 2 ***********/
+.k5-footer-icon2{
+	width:22px;
+	height:21px;
+	float:left;
+	margin-left:8px;
+}
+.ui-footer{
+	background-image: url('../img/footer_bg2.png');	
+	height:132px;
+	border:none !important;
+	border-width:0 !important;
+	border-color: transparent !important;
+	opacity:0.9;	
+	background-position: center bottom;
+}
+.footer-container{
+	width:100%;
+	height:40px;
+	padding-top:25px;
+	text-aling:center !important;
+	margin:0 auto !important;
+	display:block;
+	border:none !important;
+	border-color: transparent !important;
+	padding-top: 56px !important;
+}
+.footer-contact-info{
+	float:left;
+	margin-left:18px;
+	margin-right:18px;
+	margin-top:8px;
+	margin-bottom:3px;
+}
+.footer-social-media{
+	 float:right;
+	 margin-right:18px;
+	 margin-top:8px;
+	 margin-bottom:15px;
+}
+/*******************************************************************/
+
+
+/********************************************************************/
+/**************************** C O N T E N T **************************/
+.ui-content {
+padding: 1px;
+background-image: url("images/fondo.jpg")!important;
+}
+
+.ui-li-has-thumb a{
+background: rgba(237, 237, 237,0.75);
+border-color: #EDEDED
+color: #293134;
+text-shadow: 0 1px 0 #6F848C;
+}
+
+
+/************************ I N D E X ********************************/
+.index-message{
+margin: 20px;
+padding: 5px;
+background-color: #F3BE5D;
+border-radius:10px;
+opacity:0.85;
+color:#FFFF;
+border: solid 1px #777575;
+
+}
+
+
+
+
+.index-page.ui-page{
+	background-image: url('../img/index1.jpg') !important; 
+  background-repeat:no-repeat !important;
+  background-attachment:scroll !important;
+	
+	background-position:top center !important;
+  background-size:100% auto !important;
+	
+	background-position:top left !important;
+  background-size:auto 100% !important;
+	
+	background-position:top left !important;
+	background-size: cover !important;
+
+	background-position:8% 99% !important;	
+}
+.index-k5-logo{
+	position: absolute;
+	bottom:0;
+	left:15px;
+	max-height:75%;
+	width:auto;
+}
+
+
+/***********************************************************************/
+/************************** D E T A L L E ******************************/
+.ui-listview>li.ui-first-child, .ui-listview>li.ui-first-child>a.ui-btn{
+	background-image: url("images/madera.jpg")!important;
+}
+
+.ui-listview>li.ui-first-child h1{
+font-size: 18px;
+}
+
+/***********************************************************************/
+
+
+/***********************************************************************/
+/************************** D E T A L L E ******************************/
+
+
+
+.recomended-img{
+float:left;
+padding:15px;
+}
+
+
+/*******************************************************************/
+/******************* C O N T E N T - B O X *************************/
+.content-box{
+	margin:4%;
+	width:83%;
+	height: 100%;
+	background-color: #000000;
+	opacity:0.8;
+	color: #ffffff;
+	padding:4%;
+	padding-left:5%;
+	text-shadow: none;
+}
+.content-item{
+	font-family: 'Gill Sans MT';
+	font-size:14px;
+	color: #ffffff;
+}
+/*******************************************************************/
+
+/*******************************************************************/
+/************************ C O N T A C T O **************************/
+#contactomapa-page {
+	background-image: url('../img/contacto_bg2.jpg') !important; 
+  background-repeat:no-repeat !important;
+  background-attachment:scroll !important;
+	background-position:center center !important;
+	background-size: cover !important;	
+}
+#contactomapa-page .ui-content{
+	margin:0 !important;
+	padding:0 !important;
+}
+
+/*******************************************************************/
+/******************** T R A N S I C I O N E S **********************/
+table { width:100%; border-spacing: 0; }
+th { text-align:left; }
+th h3 { margin:.8em 0 .6em 1.5em; }
+th, td { vertical-align:top; border-top:1px solid #eee; padding: 1px 3px; background-color:#fcfcfc; }
+td .ui-btn { margin:.4em 0 .5em 0; }
+td .ui-btn-inner { padding: .4em 15px; }
+/*******************************************************************/

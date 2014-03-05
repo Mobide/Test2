@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.0.min.css" />
+	<script src="../js/jquery-1.10.2.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.0.min.js"></script>
+	<script src="../js/jquery.cycle.lite.js" type="text/javascript"></script>
+	<script id="custom-init-js" src="../js/custom-init-js.js"></script>
+	<link rel="stylesheet" href="../css/bartolo.css"/>
+	<!-- <script id="analytics" src="../js/analytics.js"></script>-->
+<title>Bar Restaurente Casa Bartolo</title>
+  </head>
+  <body>
+  <div data-role="page" id="listado-page" class="listado-page">
+	<div data-role="panel" class="panel" id="menu-panel1" data-position="left" data-display="overlay" data-theme="b" data-swipe-close="false">
+		<ul data-role="listview">
+			<li data-icon="back"><a class="menu-item" href="#" data-rel="close">Menú</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="index.html">Casa Bartolo</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Pintxo" data-ajax="false">Pintxos</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Racion" data-ajax="false">Raciones</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Postre" data-ajax="false">Postres</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="contacto.html">Contacto</a></li>
+			
+		</ul>
+	</div>
+	<div data-role="panel" class="panel"  id="lang-panel1" data-position="right" data-display="overlay" data-theme="b" data-swipe-close="false">
+		<ul data-role="listview">
+			<li data-icon="forward"><a class="lang-item" href="#" data-rel="close">Idioma</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../es/">Castellano</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../eu/">Euskara</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../en/">English</a></li>		
+		</ul>
+	</div>
+	
+	<div data-role="header" class="bartolo-header">
+		<a href="#menu-panel1" class="ui-btn-left" style="background-color:#323232 !important;"><img class="bartolo-header-menu" src="../img/menu.png" alt="menu"/></a>
+		<center><h1 class="bartolo-header-title">Casa Bartolo</h1></center>
+		<center><h2 class="bartolo-header-subtitle">Restaurante</h></center>
+		<a href="#lang-panel1" class="ui-btn-right" style="background-color:#323232 !important;"><img class="bartolo-header-lang" src="../img/lang.png" alt="language"/></a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" style="min-height:450px; padding: 15px;">
+		<div style="margin-bottom: 10px;">
+		<h3>
+		Si desea realizar una reserva o recibir cualquier tipo de información:<br/>
+		<a class="ui-btn ui-btn-inline ui-shadow ui-btn-corner-all ui-btn-up-e" href="tel:943420279">943 42 02 79</a>
+		</h3>
+		Calle Fermín Calbetón, 38<br/>
+		CP20003 - San Sebastián
+		</div>
+		<!--<iframe width="100%" height="300px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2902.5793700074637!2d-1.9855367499999999!3d43.32306404999999!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf627ae41285984b5!2sRestaurante+Casa+Bartolo+Etxea!5e0!3m2!1ses!2ses!4v1393872207612"></iframe>-->
+		<iframe  width="100%" height="300px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps?t=m&amp;q=Casa+Bartolo&amp;cid=0xf627ae41285984b5&amp;ie=UTF8&amp;hq=Casa+Bartolo&amp;hnear=&amp;iwloc=A&amp;ll=43.323064,-1.985537&amp;spn=0,0&amp;output=embed"></iframe><br /><small><a class="ui-btn ui-btn-inline ui-shadow ui-btn-corner-all ui-btn-up-e" href="https://www.google.com/maps?t=m&amp;q=Casa+Bartolo&amp;cid=0xf627ae41285984b5&amp;ie=UTF8&amp;hq=Casa+Bartolo&amp;hnear=&amp;iwloc=A&amp;ll=43.323064,-1.985537&amp;spn=0,0&amp;source=embed" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
+		</div><!-- /content -->
+	
+  </div><!-- /page -->
+ 
+
+</body>
+</html>

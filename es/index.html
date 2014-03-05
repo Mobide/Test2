@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.0.min.css" />
+	<script src="../js/jquery-1.10.2.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.0.min.js"></script>
+	<script src="../js/jquery.cycle.lite.js" type="text/javascript"></script>
+	<script id="custom-init-js" src="../js/custom-init-js.js"></script>
+	<link rel="stylesheet" href="../css/bartolo.css"/>
+	<!-- <script id="analytics" src="../js/analytics.js"></script>-->
+<title>Bar Restaurente Casa Bartolo</title>
+  </head>
+  <body>
+  <div data-role="page" id="listado-page" class="listado-page">
+	<div data-role="panel" class="panel" id="menu-panel1" data-position="left" data-display="overlay" data-theme="b" data-swipe-close="false">
+		<ul data-role="listview">
+			<li data-icon="back"><a class="menu-item" href="#" data-rel="close">Menú</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="index.html">Casa Bartolo</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Pintxo" data-ajax="false">Pintxos</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Racion" data-ajax="false">Raciones</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Postre" data-ajax="false">Postres</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="contacto.html">Contacto</a></li>
+			
+		</ul>
+	</div>
+	<div data-role="panel" class="panel"  id="lang-panel1" data-position="right" data-display="overlay" data-theme="b" data-swipe-close="false">
+		<ul data-role="listview">
+			<li data-icon="forward"><a class="lang-item" href="#" data-rel="close">Idioma</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../es/">Castellano</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../eu/">Euskara</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../en/">English</a></li>		
+		</ul>
+	</div>
+	
+	<div data-role="header" class="bartolo-header">
+		<a href="#menu-panel1" class="ui-btn-left" style="background-color:#323232 !important;"><img class="bartolo-header-menu" src="../img/menu.png" alt="menu"/></a>
+		<center><h1 class="bartolo-header-title">Casa Bartolo</h1></center>
+		<center><h2 class="bartolo-header-subtitle">Restaurante</h></center>
+		<a href="#lang-panel1" class="ui-btn-right" style="background-color:#323232 !important;"><img class="bartolo-header-lang" src="../img/lang.png" alt="language"/></a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" style="min-height:450px">
+		<div id="myslides" style="position: relative; width:100%;">
+			<img src="../img/slides/restaurante1.jpg" style="z-index: 5; display: none; opacity: 1;width:100%;height:auto">
+			<img src="../img/slides/restaurante2.jpg" style="z-index: 4; display: none; opacity: 0;width:100%;height:auto">
+			<img src="../img/slides/restaurante3.jpg" style="z-index: 3; display: none; opacity: 0;width:100%;height:auto">
+			<img src="../img/slides/restaurante4.jpg" style="z-index: 5; display: none; opacity: 0;width:100%;height:auto">
+			<img src="../img/slides/restaurante5.jpg" style="z-index: 3; display: none; opacity: 0;width:100%;height:auto">
+			<img src="../img/slides/restaurante6.jpg" style="z-index: 2; display: none; opacity: 0;width:100%;height:auto">
+			<img src="../img/slides/restaurante6.jpg" style="z-index: 2; display: none; opacity: 0;width:100%;height:auto">
+		</div>
+		<img src="../img/slides/restaurante1.jpg" style="width:100%;height:auto">
+		<div>
+			<div class="index-message"> 
+			<center><h3>¡Ven y saborea nuestra gastronomía!</h3></center>
+			
+			<center><h4>Cocina abierta todo el día</h4></center>
+			</div>
+			<div style="margin:20px">
+				<div><h2 id="title_pintxo"></h2></div>
+				<div><h4 id="info_pintxo"></h4></div>
+				<center><p style="margin-bottom:0px; font-weight: bold;margin-bottom: 8px;font-size: 20px;color:#000000">Compartir:</p>
+				<a href="http://facebook.com/sharer.php?u=http://www.casabartoloetxea.com//" class="ui-link">
+				<img src="../img/socialmedia/facebook-logo.png"></a>
+				<a href="http://twitter.com/home?status=http://www.casabartoloetxea.com//" class="ui-link">
+				<img src="../img/socialmedia/twitter-logo.png"></a>
+				<a href="http://plus.google.com/share?url=http://www.casabartoloetxea.com//" class="ui-link">
+				<img src="../img/socialmedia/googleplus-logo.png"></a>
+				<a href="mailto:?subject=Restaurante casa bartolo&amp;body=http://www.casabartoloetxea.com/" class="ui-link">
+				<img src="../img/socialmedia/email-logo.png"></a>
+				</center>
+			</div>
+		</div>
+
+	
+	
+	</div><!-- /content -->
+	
+  </div><!-- /page -->
+  
+  
+
+
+</body>
+</html>

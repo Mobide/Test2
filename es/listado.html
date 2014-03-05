@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.0.min.css" />
+	<script src="../js/jquery-1.10.2.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.0.min.js"></script>
+	<script src="../js/jquery.cycle.lite.js" type="text/javascript"></script>
+	<script id="custom-init-js" src="../js/custom-init-js.js"></script>
+	<link rel="stylesheet" href="../css/bartolo.css"/>
+	<!-- <script id="analytics" src="../js/analytics.js"></script>-->
+<title>Bar Restaurente Casa Bartolo</title>
+  </head>
+  <body>
+  <div data-role="page" id="listado-page" class="listado-page">
+	<div data-role="panel" class="panel" id="menu-panel1" data-position="left" data-display="overlay" data-theme="b" data-swipe-close="false">
+		<ul data-role="listview">
+			<li data-icon="back"><a class="menu-item" href="#" data-rel="close">Menú</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="index.html">Casa Bartolo</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Pintxo" data-ajax="false">Pintxos</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Racion" data-ajax="false">Raciones</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="listado.html?tipo=Postre" data-ajax="false">Postres</a></li>
+			<li data-icon="menu-right"><a class="menu-item" href="contacto.html">Contacto</a></li>
+			
+		</ul>
+	</div>
+	<div data-role="panel" class="panel"  id="lang-panel1" data-position="right" data-display="overlay" data-theme="b" data-swipe-close="false">
+		<ul data-role="listview">
+			<li data-icon="forward"><a class="lang-item" href="#" data-rel="close">Idioma</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../es/">Castellano</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../eu/">Euskara</a></li>
+			<li data-icon="lang-left"><a class="lang-item" href="../en/">English</a></li>		
+		</ul>
+	</div>
+	
+	<div data-role="header" class="bartolo-header">
+		<a href="#menu-panel1" class="ui-btn-left" style="background-color:#323232 !important;"><img class="bartolo-header-menu" src="../img/menu.png" alt="menu"/></a>
+		<center><h1 class="bartolo-header-title">Casa Bartolo</h1></center>
+		<center><h2 class="bartolo-header-subtitle">Restaurante</h></center>
+		<a href="#lang-panel1" class="ui-btn-right" style="background-color:#323232 !important;"><img class="bartolo-header-lang" src="../img/lang.png" alt="language"/></a>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul id="listadoPintxos" data-role="listview" data-inset="true">
+		</ul>
+	</div><!-- /content -->
+</div><!-- /page -->
+  
+<script>
+</script>
+
+<input id="current-lang" type="hidden" name="es" value="es"></input>
+</body>
+</html>
